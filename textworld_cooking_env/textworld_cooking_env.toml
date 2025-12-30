@@ -1,12 +1,12 @@
 model = "Qwen/Qwen3-0.6B"
 
 [env]
-id = "pair-sum-product"
+id = "textworld_cooking_env"
 
 [env.args]
-difficulty = "hard"
-num_examples = 10000
-concise_bonus = false
+difficulties = [1]
+max_turns=5
+
 
 [inference]
 gpus = 2
@@ -18,10 +18,13 @@ enforce_eager = true
 gpus = 2
 
 [trainer.args]
-run_name = "pair-sum-product"
-micro_batch_size = 8
+run_name = "textworld_cooking_env"
+micro_batch_size = 4
 rollouts_per_example = 16
 batch_size = 128
 max_steps = 100
 max_tokens = 512
 max_seq_len = 1024
+
+[trainer.args.chat_template_kwargs]
+enable_thinking = false
