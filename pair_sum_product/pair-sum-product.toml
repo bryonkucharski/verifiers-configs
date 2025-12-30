@@ -1,0 +1,27 @@
+model = "Qwen/Qwen3-0.6B"
+
+[env]
+id = "pair-sum-product"
+
+[env.args]
+difficulty = "hard"
+num_examples = 10000
+concise_bonus = false
+
+[inference]
+gpus = 2
+
+[inference.args]
+enforce_eager = true
+
+[trainer]
+gpus = 2
+
+[trainer.args]
+run_name = "pair-sum-product"
+micro_batch_size = 8
+rollouts_per_example = 16
+batch_size = 128
+max_steps = 100
+max_tokens = 512
+max_seq_len = 1024
