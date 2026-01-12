@@ -5,7 +5,7 @@ id = "textworld_cooking_env"
 
 [env.args]
 difficulties = [1]
-max_turns=5
+max_turns=10
 
 
 [inference]
@@ -19,13 +19,13 @@ gpus = 2
 
 
 [trainer.args]
-run_name = "textworld_cooking_env-max_turns:5-batch_size:64-qwen3-4b"
+run_name = "textworld_cooking_env-max_turns:10-batch_size:128-rollouts:8-qwen3-4b"
 micro_batch_size = 8
 rollouts_per_example = 8
 logprobs_chunk_size = 8
 gradient_checkpointing = false
-batch_size = 64
-max_steps = 50
+batch_size = 128
+max_steps = 100
 max_tokens = 512
 max_seq_len = 1024
 
