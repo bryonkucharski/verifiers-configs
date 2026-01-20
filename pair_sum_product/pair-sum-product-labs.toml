@@ -1,0 +1,17 @@
+model = "Qwen/Qwen3-4B-Instruct-2507"
+max_steps = 100
+batch_size = 128
+rollouts_per_example = 16
+
+[sampling]
+max_tokens = 512
+
+[[env]]
+id = "bryonkucharski/pair-sum-product"
+args = { difficulty = "hard", num_examples = 10000, concise_bonus = false }
+
+
+[wandb]
+project = "prime-rl-labs"
+name = "pair-sum-product-hard-qwen4b-instruct"
+
